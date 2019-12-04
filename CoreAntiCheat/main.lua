@@ -56,11 +56,13 @@ function CoreAntiCheatCommand(Split, Player, World)
 		if CACenabled then
 			if Split[2] == "test" then
 				cRoot:Get():BroadcastChat("test")
+			elseif Split[2] == "config" then
+				Player:SendMessageInfo("-- Config --")
+				Player:SendMessageInfo("Ping Allowance: " .. getconfig(1))
+				Player:SendMessageInfo("MovementRestriction: " .. getconfig(2))
 			else
 				Player:SendMessageFailure("Incorrect Argument")
 			end
-		elseif Split[2] == "config" then
-			Player:SendMessageFailure(config(1))
 		else
 			Player:SendMessageFailure("CoreAntiCheat is disabled!")
 		end
