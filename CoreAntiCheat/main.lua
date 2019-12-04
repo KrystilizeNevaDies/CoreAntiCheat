@@ -11,20 +11,6 @@
 --  If set to true, messages are prefixed, e. g. "[FATAL]". If false, messages are colored.
 g_UsePrefixes = true
 
-
-
-
-
--- Global variables
-Messages = {}
-WorldsSpawnProtect = {}
-WorldsWorldLimit = {}
-WorldsWorldDifficulty = {}
-lastsender = {}
-
-
-
-
 -- Called by Cuberite on plugin start to initialize the plugin
 function Initialize(Plugin)
 	Plugin:SetName("CoreAntiCheat")
@@ -73,6 +59,8 @@ function CoreAntiCheatCommand(Split, Player, World)
 			else
 				Player:SendMessageFailure("Incorrect Argument")
 			end
+		elseif Split[2] == "config" then
+			Player:SendMessageFailure(config(1))
 		else
 			Player:SendMessageFailure("CoreAntiCheat is disabled!")
 		end

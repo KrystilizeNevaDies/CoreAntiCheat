@@ -9,6 +9,8 @@
         "cPluginManager",
         "configtable",
         "config",
-        "getconfig"
+        "getconfig",
+        "g_UsePrefixes",
+        "lastsender"
     ]
 }
