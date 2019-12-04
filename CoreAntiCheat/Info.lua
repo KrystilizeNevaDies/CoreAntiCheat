@@ -5,19 +5,19 @@
 
 g_PluginInfo = 
 {
-	Name = "Core",
-	Version = "15",
+	Name = "CoreAntiCheat",
+	Version = "1",
 	Date = "2014-06-11",
 	SourceLocation = "https://github.com/KrystilizeNevaDies/CoreAntiCheat",
 	Description = [[Implements basic Anti-Cheat that is useful in running a small server]],
 	
 	Commands =
 	{
-		["/ban"] = 
+		["/AntiCheat"] = 
 		{
-			Permission = "core.ban",
-			Handler = HandleBanCommand,
-			HelpString = "Bans a player.",
+			Permission = "coreanticheat.cmd",
+			Handler = CoreAntiCheatCommand,
+			HelpString = "Universal Anticheat Command",
 		}
 	},  -- Commands
 
@@ -25,24 +25,18 @@ g_PluginInfo =
 	
 	ConsoleCommands =
 	{
-		["ban"] =
+		["anticheat"] =
 		{
-			Handler =  HandleConsoleBan,
-			HelpString = "Bans a player by name.",
+			Handler =  CoreAntiCheatConsoleCommand,
+			HelpString = "Universal Anticheat Command",
 		},
 	},  -- ConsoleCommands
 	Permissions = 
 	{
-		["core.changegm"] =
+		["coreanticheat.cmd"] =
 		{
-			Description = "Allows players to change gamemodes.",
+			Description = "Allows use of anticheat command",
 			RecommendedGroups = "admins",
-		},
-
-		["core.enchant"] =
-		{
-			Description = "Allows players to add an enchantment to a player's held item.",
-			RecommendedGroups = "everyone",
 		},
 	},  -- Permissions
 }  -- g_PluginInfo
