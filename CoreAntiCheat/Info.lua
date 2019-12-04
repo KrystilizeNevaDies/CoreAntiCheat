@@ -18,6 +18,13 @@ g_PluginInfo =
 			Permission = "coreanticheat.cmd",
 			Handler = CoreAntiCheatCommand,
 			HelpString = "Universal Anticheat Command",
+			ParameterCombinations =
+			{
+				{
+					Params = "test",
+					Help = "Test Command",
+				},
+			}
 		}
 	},  -- Commands
 

@@ -61,8 +61,8 @@ end
 
 -- Command Functions
 function CoreAntiCheatCommand(Split, Player, World)
-	if Split[1] == test then
-		cRoot:BroadcastChat("Test")
+	if Split[2] == "test" then
+	cRoot:Get():BroadcastChat("test")
 	end
 	return true
 end
