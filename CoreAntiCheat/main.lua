@@ -32,8 +32,6 @@ function Initialize(Plugin)
 
 	-- Register for all hooks needed
 
-	-- Bind ingame commands:
-
 	-- Load the InfoReg shared library:
 	dofile(cPluginManager:GetPluginsPath() .. "/InfoReg.lua")
 
@@ -42,6 +40,9 @@ function Initialize(Plugin)
 
 	-- Bind all the console commands:
 	RegisterPluginInfoConsoleCommands()
+
+	-- Initialise variables
+	CACenabled = true
 
 	LOG("Initialised " .. Plugin:GetName() .. " v." .. Plugin:GetVersion())
 
@@ -52,17 +53,29 @@ function OnDisable()
 	LOG( "Disabled CoreAntiCheat!" )
 end
 
-
--- Initialising Functions
-
-
 -- Global Functions
 
 
 -- Command Functions
 function CoreAntiCheatCommand(Split, Player, World)
-	if Split[2] == "test" then
-	cRoot:Get():BroadcastChat("test")
+	if Split[2] == "toggle" then
+		if CACenabled then
+			CACenabled = false
+			Player:SendMessageInfo("CoreAntiCheat Disabled!")
+		else
+			CACenabled = true
+			Player:SendMessageInfo("CoreAntiCheat Enabled!")
+		end
+	else
+		if CACenabled then
+			if Split[2] == "test" then
+				cRoot:Get():BroadcastChat("test")
+			else
+				Player:SendMessageFailure("Incorrect Argument")
+			end
+		else
+			Player:SendMessageFailure("CoreAntiCheat is Disabled!")
+		end
 	end
 	return true
 end

@@ -13,7 +13,7 @@ g_PluginInfo =
 	
 	Commands =
 	{
-		["/AntiCheat"] = 
+		["/anticheat"] = 
 		{
 			Permission = "coreanticheat.cmd",
 			Handler = CoreAntiCheatCommand,
