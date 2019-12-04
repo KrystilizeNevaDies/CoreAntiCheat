@@ -17,6 +17,7 @@ function Initialize(Plugin)
 	Plugin:SetVersion(tonumber(g_PluginInfo["Version"]))
 
 	-- Register for all hooks needed
+	cPluginManager:AddHook(cPluginManager.HOOK_PLAYER_MOVING, OnPlayerMoving);
 
 	-- Load the InfoReg shared library:
 	dofile(cPluginManager:GetPluginsPath() .. "/InfoReg.lua")
@@ -72,3 +73,11 @@ end
 
 -- Command SubFunctions
 
+
+
+-- AntiCheat Logic
+
+function OnPlayerMoving(Player, OldPosition, NewPosition)
+	Player:SendMessage(OldPosition:x())
+	-- true means stop moving
+end
