@@ -70,6 +70,8 @@ function CoreAntiCheatCommand(Split, Player, World)
 		if CACenabled then
 			if Split[2] == "test" then
 				cRoot:Get():BroadcastChat("test")
+			elseif Split[2] == "config" then
+					Player:SendMessageFailure(getconfig(1))
 			else
 				Player:SendMessageFailure("Incorrect Argument")
 			end

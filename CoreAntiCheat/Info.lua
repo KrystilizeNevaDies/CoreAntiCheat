@@ -24,6 +24,10 @@ g_PluginInfo =
 					Params = "test",
 					Help = "Test Command",
 				},
+				{
+					Params = "config",
+					Help = "ListConfig",
+				},
 			}
 		}
 	},  -- Commands

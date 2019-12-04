@@ -1,0 +1,14 @@
+{
+    "Lua.diagnostics.globals": [
+        "LOG",
+        "CoreAntiCheatConsoleCommand",
+        "g_PluginInfo",
+        "cRoot",
+        "RegisterPluginInfoConsoleCommands",
+        "RegisterPluginInfoCommands",
+        "cPluginManager",
+        "configtable",
+        "config",
+        "getconfig"
+    ]
+}
