@@ -78,10 +78,17 @@ end
 -- AntiCheat Logic
 
 function OnPlayerMoving(Player, OldPosition, NewPosition)
-	if math.abs(OldPosition.x-NewPosition.x) > 0.5 * getconfig(2) then
-		Player:SendMessageInfo(math.abs(OldPosition.x-NewPosition.x) .. " out of " .. (0.5 * /getconfig(2)))
-	return true
-	else
-		Player:SendMessageInfo(math.abs(OldPosition.x-NewPosition.x) .. " out of " .. (0.5 * getconfig(2)))
+  local XD = math.abs(OldPosition.x-NewPosition.x)
+  local YD = math.abs(OldPosition.y-NewPosition.y)
+  local ZD = math.abs(OldPosition.z-NewPosition.z)
+  local Speed = math.sqrt(math.pow(XD,2) + math.pow(ZD, 2))
+  local MaxSpeed = (Player:GetMaxSpeed() * 0.22) + (getconfig(2) * 0.1)
+  
+  if getconfig(3) then
+    Player:SendMessageInfo(Speed .. " out of " .. MaxSpeed)
+	end
+  
+  if Speed > MaxSpeed then
+    return true
 	end
 end

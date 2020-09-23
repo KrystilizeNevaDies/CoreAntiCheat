@@ -10,7 +10,10 @@ PingAllowance = 2
 -- MovementRestriction: Defines how harsh the plugin is on player movement.
 -- Integer between 0 and 10. 1 is the most restrictive and 10 is the least restrictive.
 -- 0 means that movement restriction is disabled. (3 is recommended)
-MovementRestriction = 6
+MovementRestriction = 10
+
+-- Debug: Prints debug to players.
+Debug = false
 
 
 
@@ -20,5 +23,6 @@ function getconfig(num)
 	configtable = {}
 	table.insert(configtable, PingAllowance)
 	table.insert(configtable, MovementRestriction)
+  table.insert(configtable, Debug)
 	return configtable[num]
 end
