@@ -78,7 +78,7 @@ end
 -- AntiCheat Logic
 
 function OnPlayerMoving(Player, OldPosition, NewPosition)
-	if math.abs(OldPosition.x-NewPosition.x) > 0.5 * /getconfig(2) then
+	if math.abs(OldPosition.x-NewPosition.x) > 0.5 * getconfig(2) then
 		Player:SendMessageInfo(math.abs(OldPosition.x-NewPosition.x) .. " out of " .. (0.5 * /getconfig(2)))
 	return true
 	else
